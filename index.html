@@ -1,0 +1,3 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>우리 팀 앱 이름</title></head><body><h1>우리 팀 앱 이름</h1><textarea id="songs"></textarea><button onclick="analyze()">장르 분석하기</button><pre id="result"></pre><script>
+async function analyze(){const songs=document.getElementById("songs").value;const r=await fetch("/api/generate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({songs})});const d=await r.json();document.getElementById("result").textContent=d.result||d.error;}
+</script></body></html>
